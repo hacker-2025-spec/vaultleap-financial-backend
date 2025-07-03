@@ -1,0 +1,15 @@
+export enum EmailTemplatesEnum {
+  CREATOR_SUMMARY = 'creator-summary',
+  DIRECT_VAULT_CREATOR_SUMMARY = 'direct-vault-creator-summary',
+  VIRTUAL_ACCOUNT_CREATOR_SUMMARY = 'virtual-account-creator-summary',
+  SHARE_HOLDER_INVITATION = 'share-holder-invitation',
+  PENDING_REWARD = 'pending-reward',
+  SECURE_ACCESS_TAX_FORM = 'secure-access-tax-form',
+  CLAIM_VAULT_KEY_REMINDER = 'claim-vault-key-reminder',
+  RECLAIM_VAULT_KEY = 'reclaim-vault-key-reminder',
+  FUNDS_SENT = 'funds-sent',
+  WELCOME = 'welcome',
+  DIRECT_VAULT_FUNDS_SENT = 'direct_vault_funds_sent',
+  VIRTUAL_ACCOUNT_FUNDS_SENT = 'virtual-account-funds-sent',
+  SUPPORT = 'support',
+}

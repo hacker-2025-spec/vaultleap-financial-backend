@@ -1,0 +1,10 @@
+export const BRIDGE_ACTIVITIES_LAST_SYNCED_MS_KEY = 'bridge:activities:last_synced_ms'
+export const BRIDGE_ACTIVITIES_LAST_SYNCED_ID_KEY = 'bridge:activities:last_synced_id'
+
+export const FOREX_RATE_USDT_USD_KEY = 'forex:rate:usdt:usd'
+export const FOREX_RATE_USDC_USD_KEY = 'forex:rate:usdc:usd'
+export const FOREX_RATE_EURC_USD_KEY = 'forex:rate:eurc:usd'
+export const FOREX_RATE_USDT_EUR_KEY = 'forex:rate:usdt:eur'
+export const FOREX_RATE_USDC_EUR_KEY = 'forex:rate:usdc:eur'
+export const FOREX_RATE_EURC_EUR_KEY = 'forex:rate:eurc:eur'
+export const FOREX_RATES_LAST_UPDATED_KEY = 'forex:rates:last_updated'

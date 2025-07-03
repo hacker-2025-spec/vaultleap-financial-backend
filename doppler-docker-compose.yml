@@ -1,0 +1,83 @@
+# Doppler environment variable template
+x-doppler: &doppler-env
+  environment:{{range $key, $value := .}}
+    - {{$key}}{{end}}
+
+services:
+  api-local:
+    depends_on:
+      - dynamodb
+      - redis
+    image: node:18
+    build:
+      dockerfile: Dockerfile
+      context: .
+    user: node
+    working_dir: /app
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/app
+    <<: *doppler-env
+    command: npm run start:local
+
+  api-dev:
+    image: node:18
+    user: node
+    working_dir: /app
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/app
+    <<: *doppler-env
+    command: npm run start:dev
+
+  api-prod:
+    image: node:18
+    build:
+      dockerfile: Dockerfile
+      context: .
+    user: node
+    working_dir: /app
+    ports:
+      - 3001:3001
+    <<: *doppler-env
+    command: npm start
+
+  api-test:
+    depends_on:
+      - dynamodb-test
+    image: node:18
+    working_dir: /app
+    user: node
+    environment:
+      - DYNAMODB_ENDPOINT=http://dynamodb-test:8008
+      - IS_OFFLINE=true
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    volumes:
+      - .:/app
+    command: npm run test
+
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - 8000:8000
+    command: -jar DynamoDBLocal.jar -sharedDb
+
+  dynamodb-test:
+    image: amazon/dynamodb-local
+    ports:
+      - 8008:8008
+    command: -jar DynamoDBLocal.jar -port 8008
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:

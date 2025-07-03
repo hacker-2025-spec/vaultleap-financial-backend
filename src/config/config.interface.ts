@@ -1,0 +1,80 @@
+import type { DataMapperConfiguration } from '@nova-odm/mapper'
+
+export enum ConfigKeys {
+  AWS_REGION = 'AWS_REGION',
+  ENVIRONMENT = 'ENVIRONMENT',
+  REDIRECT_URL = 'REDIRECT_URL',
+  DATA_MAPPER = 'DATA_MAPPER',
+  KMS_KEY_ID = 'KMS_KEY_ID',
+  CHAIN_ID = 'CHAIN_ID',
+  EVM_EVENT_DETAIL_TYPE = 'EVM_EVENT_DETAIL_TYPE',
+  EVM_EVENT_BUS_NAME = 'EVM_EVENT_BUS_NAME',
+  EVM_EVENT_SOURCE = 'EVM_EVENT_SOURCE',
+  TAX_FORMS_BUCKET_NAME = 'TAX_FORMS_BUCKET_NAME',
+  GRAPHQL_API_URL = 'GRAPHQL_API_URL',
+  USER_AVATAR_BUCKET_NAME = 'USER_AVATAR_BUCKET_NAME',
+  BRIDGE_API_KEY = 'BRIDGE_API_KEY',
+  BRIDGE_URL = 'BRIDGE_URL',
+  BRIDGE_WEBHOOK_PUBLIC_KEY = 'BRIDGE_WEBHOOK_PUBLIC_KEY',
+  PERSONA_API_TOKEN = 'PERSONA_API_TOKEN',
+  PERSONA_INQUIRY_TEMPLATE_ID = 'PERSONA_INQUIRY_TEMPLATE_ID',
+  API_DOMAIN_NAME = 'API_DOMAIN_NAME',
+  PRIVY_APP_ID = 'PRIVY_APP_ID',
+  PRIVY_TOKENS_PUBLIC_KEY = 'PRIVY_TOKENS_PUBLIC_KEY',
+  SUPPORT_EMAIL = 'SUPPORT_EMAIL',
+  SES_SENDER = 'SES_SENDER',
+  SUMSUB_API_APP_TOKEN = 'SUMSUB_API_APP_TOKEN',
+  SUMSUB_API_SECRET_KEY = 'SUMSUB_API_SECRET_KEY',
+  ALCHEMY_API_KEY = 'ALCHEMY_API_KEY',
+  ALCHEMY_AUTH_TOKEN = 'ALCHEMY_AUTH_TOKEN',
+  REDIS_HOST = 'REDIS_HOST',
+  REDIS_PORT = 'REDIS_PORT',
+  BULL_BOARD_USERNAME = 'BULL_BOARD_USERNAME',
+  BULL_BOARD_PASSWORD = 'BULL_BOARD_PASSWORD',
+  IS_OFFLINE = 'IS_OFFLINE',
+  REDIS_TLS = 'REDIS_TLS',
+}
+
+export interface IConfig {
+  [ConfigKeys.ENVIRONMENT]: string
+  [ConfigKeys.REDIRECT_URL]: string
+  [ConfigKeys.DATA_MAPPER]: Partial<DataMapperConfiguration>
+  JSON_RPC_URL: string
+  ETHERSCAN_URL: string
+  [ConfigKeys.KMS_KEY_ID]: string
+  [ConfigKeys.EVM_EVENT_DETAIL_TYPE]: string
+  [ConfigKeys.EVM_EVENT_BUS_NAME]: string
+  [ConfigKeys.EVM_EVENT_SOURCE]: string
+  [ConfigKeys.CHAIN_ID]: number
+  [ConfigKeys.TAX_FORMS_BUCKET_NAME]: string
+  [ConfigKeys.GRAPHQL_API_URL]: string
+  [ConfigKeys.USER_AVATAR_BUCKET_NAME]: string
+  [ConfigKeys.BRIDGE_API_KEY]: string
+  [ConfigKeys.BRIDGE_URL]: string
+  [ConfigKeys.BRIDGE_WEBHOOK_PUBLIC_KEY]: string
+  [ConfigKeys.PERSONA_API_TOKEN]: string
+  [ConfigKeys.PERSONA_INQUIRY_TEMPLATE_ID]: string
+  [ConfigKeys.PRIVY_APP_ID]: string
+  [ConfigKeys.PRIVY_TOKENS_PUBLIC_KEY]: string
+  [ConfigKeys.SUPPORT_EMAIL]: string
+  [ConfigKeys.SES_SENDER]: string
+  [ConfigKeys.IS_OFFLINE]: string
+  [ConfigKeys.SUMSUB_API_APP_TOKEN]: string
+  [ConfigKeys.SUMSUB_API_SECRET_KEY]: string
+  [ConfigKeys.ALCHEMY_API_KEY]: string
+  [ConfigKeys.ALCHEMY_AUTH_TOKEN]: string
+  [ConfigKeys.REDIS_HOST]: string
+  [ConfigKeys.REDIS_PORT]: string
+  [ConfigKeys.BULL_BOARD_USERNAME]: string
+  [ConfigKeys.BULL_BOARD_PASSWORD]: string
+  [ConfigKeys.AWS_REGION]: string
+  [ConfigKeys.REDIS_TLS]: string
+}
+
+export enum Environment {
+  LOCAL = 'local',
+  DEVELOPMENT = 'development',
+  PRODUCTION = 'prod',
+  STAGING = 'stage',
+  TEST = 'test',
+}

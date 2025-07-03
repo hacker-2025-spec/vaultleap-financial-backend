@@ -1,0 +1,1 @@
+export const BASE_FORMS_PATH = 'BASE_FORMS_PATH'

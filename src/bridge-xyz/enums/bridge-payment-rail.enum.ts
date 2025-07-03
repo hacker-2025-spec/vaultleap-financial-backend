@@ -1,0 +1,15 @@
+export enum BridgePaymentRail {
+  ACH = 'ach',
+  WIRE = 'wire',
+  ACH_PUSH = 'ach_push',
+  ACH_SAME_DAY = 'ach_same_day',
+  ARBITRUM = 'arbitrum',
+  AVALANCHE_C_CHAIN = 'avalanche_c_chain',
+  BASE = 'base',
+  ETHEREUM = 'ethereum',
+  OPTIMISM = 'optimism',
+  POLYGON = 'polygon',
+  SOLANA = 'solana',
+  SPEI = 'spei',
+  STELLAR = 'stellar',
+}

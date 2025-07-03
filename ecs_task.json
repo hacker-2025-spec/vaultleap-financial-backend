@@ -1,0 +1,52 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "state-vaultleap-backend",
+            "image": "980921735225.dkr.ecr.us-east-1.amazonaws.com/state-vaultleap-backend:version_to_replace",
+            "cpu": 1024,
+            "portMappings": [
+                {
+                    "name": "container-port-3001",
+                    "containerPort": 3001,
+                    "hostPort": 3001,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],            
+            "environment":[],
+            "essential": true,           
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/state-vaultleap-backend",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "state-vaultleap-backend",
+    "executionRoleArn": "arn:aws:iam::980921735225:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",    
+    "volumes": [],    
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "8192",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "enableFaultInjection": false
+}

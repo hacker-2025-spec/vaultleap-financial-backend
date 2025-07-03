@@ -1,0 +1,25 @@
+{
+  "name": "@KLYDO-io/getrewards-backend-api",
+  "version": "0.2.23",
+  "description": "Getrewards backend api",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "getrewards",
+    "smartcontracts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
+  "files": [
+    "dist/"
+  ]
+}

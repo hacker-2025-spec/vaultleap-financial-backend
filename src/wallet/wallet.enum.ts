@@ -1,0 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export enum WALLET_STATUS {
+  WALLET_BELONGS_TO_SOMEONE_ELSE = 'WALLET_BELONGS_TO_SOMEONE_ELSE',
+  WALLET_ALREADY_ADDED = 'WALLET_ALREADY_ADDED',
+  WALLET_NOT_ASSIGNED = 'WALLET_NOT_ASSIGNED',
+}
